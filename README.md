@@ -17,6 +17,8 @@ Sistemul funcționează ca un Tablou de Bord (Dashboard) analitic de tip Single 
 
 * [Utilizator] <---> [Interfață HTML5/JS] <---> [data.php] <---> [Baza de date MySQL]
 
+  ![Diagrama C4](raport/image.png)
+
   ### 2.2 Funcționalitățile Produsului (Product Functions)
 1.  Filtrarea avansată a seturilor de date pe criterii multiple (ani, rezidență, sex, vârstă, educație, localizare geografică).
 2.  Generarea instantanee de statistici agregate (valori medii, extreme teritoriale).
