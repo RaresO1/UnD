@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport Tehnic ȘomajRO </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #2ea44f;
+            --accent-red: #f85149;
+            --font-sans: 'Sora', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            max-width: 900px;
+            margin: 40px auto 20px auto;
+            padding: 0 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .header-meta {
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .authors {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--accent-blue);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--accent-blue);
+            margin-top: 20px;
+        }
+
+        p, ul, ol {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            text-align: justify;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        code, pre {
+            font-family: var(--font-mono);
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 2px 6px;
+            font-size: 0.9rem;
+            color: #ff79c6;
+        }
+
+        pre {
+            padding: 15px;
+            overflow-x: auto;
+            color: var(--text-main);
+        }
+
+        .req-card {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--accent-blue);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            border-radius: 0 6px 6px 0;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .req-card h4 {
+            margin: 0 0 10px 0;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            color: #ffffff;
+        }
+
+        .req-tag {
+            background-color: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .req-tag.ui {
+            background-color: rgba(46, 164, 79, 0.15);
+            color: var(--accent-green);
+        }
+
+        .req-tag.nf {
+            background-color: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+        }
+
+        .architecture-box {
+            border: 1px solid var(--border-color);
+            background-color: var(--bg-card);
+            padding: 15px;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            margin: 15px 0;
+            color: #8be9fd;
+            width: 580px;
+        }
+
+        footer {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding: 20px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body prefix="schema: http://schema.org/ Dpub: http://www.w3.org/ns/wp-id/">
+
+<header>
+    <h1 property="schema:name">Raport de Specificare a Cerințelor Sistemului (SRS)</h1>
+</header>
+
+<main property="schema:mainEntityOfPage" xml:lang="ro">
+    <article id="srs-document" typeof="schema:ScholarlyArticle">
+        
+        <section id="introducere" role="doc-introduction">
+            <h2>1. Introducere</h2>
+            
+            <h3>1.1 Scopul Documentului</h3>
+            <p>
+                Prezentul document constituie specificația formală a cerințelor de sistem (SRS) pentru platforma 
+                <strong>ȘomajRO</strong>, utilizând structura standardizată propusă de 
+                <code>IEEE Std 830-1998</code>. Scopul este descrierea exhaustivă a funcționalităților esențiale, 
+                a constrângerilor tehnice și a modului de interacțiune interfață-utilizator pentru modulul de analiză 
+                multi-criterială a șomajului la nivel național și județean în România.
+            </p>
+
+            <h3>1.2 Domeniul de Aplicare al Produsului</h3>
+            <p>
+                Aplicația software <strong>ȘomajRO</strong> este un sistem de business intelligence și analiză vizuală 
+                de tip *Single Page Application* (SPA). Aceasta procesează indicatorii statistici relativi la piața muncii 
+                proveniți de la Institutul Național de Statistică (INS) și Agenția Națională pentru Ocuparea Forței de Muncă (ANOFM). 
+                Produsul final acționează ca un Tablou de Bord (Dashboard) capabil să unifice date demografice complexe și să le 
+                expună sub formă cartografică, grafică și tabelară, oferind totodată facilități de export vectorial și documentar local.
+            </p>
+        </section>
+
+        <section id="descriere-generala">
+            <h2>2. Descrierea Generală</h2>
+            
+            <h3>2.1 Perspectiva Produsului</h3>
+            <p>
+                Sistemul este dezvoltat independent (standalone) din punct de vedere al utilizării, dar funcționează într-o arhitectură strict decuplată de tip Client-Server (Frontend static legat asincron de un API RESTful în PHP).
+            </p>
+            
+            <section id="arhitectura-sistem">
+                <div class="architecture-container" style="text-align: center; padding: 20px;">
+                    <img src="image.png" alt="Diagrama Arhitecturală ȘomajRO" style="max-width: 100%;">
+                </div>
+            </section>
+
+            <h3>2.2 Funcționalitățile Sistemului (Sumar)</h3>
+            <p>
+                Produsul înglobează următoarele macro-funcționalități:
+            </p>
+            <ol>
+                <li>Colectarea filtrelor demografice (interval de ani, gen, mediu de rezidență, grupă de vârstă, nivel de școlarizare).</li>
+                <li>Interogarea asincronă sau prelucrarea matricială locală a datelor corelate.</li>
+                <li>Generarea dinamică a indicatorilor analitici (medie globală, extreme absolute, tendințe evolutive).</li>
+                <li>Vizualizarea prin reprezentări polimorfice controlate prin tab-uri (Grafic cu bare de volum, Linii de evoluție în timp, Radar multi-criterial adaptat și Hartă D3.js).</li>
+                <li>Generarea și descărcarea rapoartelor structurate în formate de uz tipografic sau comercial (CSV, SVG, PDF).</li>
+            </ol>
+
+            <h3>2.3 Caracteristicile Utilizatorilor</h3>
+            <p>
+                Utilizatorul tipic este reprezentat de analiști guvernamentali, sociologi, jurnaliști de investigație sau studenți. Sistemul elimină necesitatea cunoașterii limbajului SQL sau a conceptelor avansate de baze de date, oferind un flux complet ghidat vizual.
+            </p>
+
+            <h3>2.4 Constrângeri</h3>
+            <ul>
+                <li><strong>Portabilitate:</strong> Funcționarea nativă în browsere compatibile ECMAScript 6+ fără adăugarea de extensii proprietare.</li>
+                <li><strong>Securitate:</strong> Interzicerea injectării parametrilor SQL dăunători prin URL (prevenție SQL Injection prin forțarea prepared statements).</li>
+            </ul>
+        </section>
+
+        <section id="cerinte-specifice" role="doc-body">
+            <h2>3. Cerințe Specifice (Specificații Detaliate)</h2>
+            
+            <h3>3.1 Cerințe Funcționale (Functional Requirements)</h3>
+
+            <div class="req-card" id="REQ-F-01" typeof="schema:Requirement">
+                <h4><span class="req-tag">1</span> Modulul de Validare și Sincronizare a Filtrelor Temporale</h4>
+                <p>
+                    <strong>Descriere:</strong> Sistemul trebuie să preia dinamic limitele temporale stabilite de utilizator prin intermediul controalelor de tip glisor (<code>input type="range"</code>) și să aplice o validare în timp real asupra limitelor.
+                </p>
+                <p>
+                    <strong>Logica de Interacțiune:</strong> Dacă valoarea selectată pe glisorul <code>An început</code> depășește valoarea configurată pe glisorul <code>An sfârșit</code>, sistemul va forța automat incrementarea glisorului de sfârșit astfel încât să egaleze valoarea de început, prevenind transmiterea unei perioade cronologice negative (ex. 2020 - 2015).
+                </p>
+            </div>
+
+            <div class="req-card" id="REQ-F-02" typeof="schema:Requirement">
+                <h4><span class="req-tag">2</span> Subsistemul Polimorfic de Randare Vizuală (Chart Engine)</h4>
+                <p>
+                    <strong>Descriere:</strong> În funcție de tab-ul activat de utilizator (Bare, Linie, Radar, Hartă, Tabel), sistemul trebuie să curețe instanțele grafice anterioare din memoria browserului (prin apelarea metodei <code>destroy()</code> din Chart.js) și să inițieze o re-randare completă a canvas-ului.
+                </p>
+                <p>
+                    <strong>Comportament Segmentat:</strong>
+                </p>
+                <ul>
+                    <li><em>Graficul de Bare:</em> Va grupa județele descrescător și va aplica un algoritm de colorare semantică (Peste 7% rata șomajului = Culoare Roșie; Între 4% și 7% = Portocaliu; Sub 4% = Verde).</li>
+                    <li><em>Graficul Radar:</em> Va colecta toți indicatorii județelor bifate și îi va mapa pe o axă normalizată cu valori cuprinse strict între <code>0 și 10</code>, permițând analiza structurală uniformă (educație vs. vârstă).</li>
+                </ul>
+            </div>
+
+            <div class="req-card" id="REQ-F-03" typeof="schema:Requirement">
+                <h4><span class="req-tag">3</span> Motorul Cartografic Dinamic și Modul Afinitate Fallback</h4>
+                <p>
+                    <strong>Descriere:</strong> Aplicația trebuie să genereze o hartă coropleth a României folosind biblioteca D3.js prin extragerea unui fișier GeoJSON extern.
+                </p>
+            </div>
+
+            <div class="req-card" id="REQ-F-04" typeof="schema:Requirement">
+                <h4><span class="req-tag">4</span> Exportul Client-Side de Înaltă Rezoluție</h4>
+                <p>
+                    <strong>Descriere:</strong> Datele procesate și încărcate în structurile de date JS trebuie să poată fi salvate la nivel local fără a re-interoga backend-ul PHP.
+                </p>
+                <p>
+                    <strong>Specificații de Format:</strong>
+                </p>
+                <ul>
+                    <li><em>CSV:</em> Export text. Aplicația va prependui în mod obligatoriu șirul de octeți BOM (Byte Order Mark) <code>\uFEFF</code> pentru a asigura interpretarea nativă corectă a diacriticelor (ș, ț, ă, î, â) în programe de calcul tabelar ca Microsoft Excel.</li>
+                    <li><em>PDF:</em> Generare document pe bază de coordonate millimetrice. Dacă datele din tabel depășesc înălțimea paginii standard A4, sistemul trebuie să ruleze un algoritm de paginare automată (auto-pagination) pentru a asigura distribuția corectă a rândurilor pe pagini subsecvente.</li>
+                </ul>
+            </div>
+
+            <h3>3.2 Cerințe de Interfață și Interacțiune (User Interface Requirements)</h3>
+
+            <div class="req-card" id="REQ-UI-01" typeof="schema:Requirement">
+                <h4><span class="req-tag ui">1</span> Managementul Tooltip-ului Contextual Urmăritor</h4>
+                <p>
+                    <strong>Descriere:</strong> La detecția evenimentului de mouse (<code>mouseenter</code> sau <code>mousemove</code>) pe o formă geometrică din hartă sau pe o bară de diagramă, interfața trebuie să mute clasa CSS a elementului global <code>#global-tooltip</code> din starea ascunsă în starea vizibilă.
+                </p>
+            </div>
+
+            <div class="req-card" id="REQ-UI-02" typeof="schema:Requirement">
+                <h4><span class="req-tag ui">2</span> Ordonarea Bi-Direcțională a Matricilor Tabelare</h4>
+                <p>
+                    <strong>Descriere:</strong> Elementele capului de tabel (<code>&lt;th&gt;</code>) trebuie să asculte declanșarea evenimentului de tip click. 
+                </p>
+                <p>
+                    <strong>Algoritm:</strong> La primul click, datele din corpul tabelului vor fi sortate crescător după coloana respectivă. La un click consecutiv pe același antet, scriptul va inversa variabila de direcție (multiplicatorul de sortare <code>-1</code>), re-afișând rândurile în ordine descrescătoare.
+                </p>
+            </div>
+
+            <h3>3.3 Cerințe Non-Funcționale (Non-Functional Requirements)</h3>
+
+            <div class="req-card" id="REQ-NF-01" typeof="schema:Requirement">
+                <h4><span class="req-tag nf">1</span> Stabilitatea Datelor prin Tehnica Ping-Pong (Fault Tolerance)</h4>
+                <p>
+                    <strong>Descriere:</strong> La inițializarea aplicației (evenimentul <code>DOMContentLoaded</code>), codul execută asincron o cerere către endpoint-ul <code>data.php?action=ping</code>. 
+                </p>
+                <p>
+                    <strong>Tratarea Erorilor:</strong> Dacă conexiunea dă fail sau statusul HTTP returnat este diferit de 200, componenta din antet <code>#db-badge</code> își va schimba culoarea din verde în roșu.
+                </p>
+            </div>
+        </section>
+
+        <section id="securitate-backend">
+            <h2>4. Arhitectura Securității Datelor la Nivel de API (Backend)</h2>
+            <p>
+                Pentru a asigura conformitatea cu cerințele de securitate ale standardului IEEE din punct de vedere al integrității datelor, scriptul backend PHP aplică filtre severe:
+            </p>
+            <pre><code>// Secvență extrasă din logica API pentru prevenirea SQL Injection
+$yrStart = sanitizeInt($_GET['yr_start'] ?? 2010, 2010, 2010, 2023);
+$yrEnd   = sanitizeInt($_GET['yr_end']   ?? 2023, 2023, 2010, 2023);
+
+// Utilizarea instrucțiunilor preparate PDO native (Fără emulare)
+$stmt = $db->prepare($sql);
+$stmt->execute([':ys' => $yrStart, ':ye' => $yrEnd]);</code></pre>
+            <p>
+                Prin această arhitectură, orice încercare de atac prin manipularea parametrilor GET din URL este neutralizată complet înainte de trimiterea interogării către serverul MySQL.
+            </p>
+        </section>
+
+    </article>
+</main>
+
+</body>
+</html>
